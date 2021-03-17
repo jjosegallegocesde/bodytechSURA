@@ -67,19 +67,52 @@
         <div class="container-fluid mt-2 mb-5">
             <div class="row">
                 <div class="col-4 p-5">
-                    <form class="border p-5" action="index.php" method="POST">
+                    
+                    <form class="border p-5" action="index.php#formulario" method="POST" id="formulario">
                         <h3>CALCULA TU IMC</h3>
                         <div class="mb-3">
-                            <label class="form-label">Peso(KG)</label>
-                            <input type="number" class="form-control" name="peso">
+                            <label class="form-label">Peso(Kg)</label>
+                            <input type="number" class="form-control" name="peso" step="any">
                         </div>
                         <div class="mb-3">
-                            <label class="form-label">Altura(cm)</label>
-                            <input type="number" class="form-control" name="altura">
+                            <label class="form-label">Altura(m)</label>
+                            <input type="number" class="form-control" name="altura" step="any">
                         </div>
                        
                         <button type="submit" class="btn btn-primary" name="botonCalcular">Calcular</button>
                     </form>
+
+
+                    <?php 
+                    
+                        if(isset($_POST["botonCalcular"])){
+
+                           //Entradas 
+                           $peso=$_POST["peso"];
+                           $altura=$_POST["altura"];
+
+                           //Proceso
+                           $imc=$peso/($altura*$altura);
+                           echo("su IMC es de: ".$imc);
+
+                           if($imc<18.5){
+                               echo("Su peso es insuficiente");
+                           }else if($imc>=18.5 && $imc<24.9){
+                               echo("su peso es normal");
+                           }else if($imc>=24.9 && $imc<26.9){
+                               echo("obesidad 1");
+                           }else if($imc>=26.9 && $imc<29.9){
+                                echo("obesidad 1");
+                           }else if(){
+                               
+                           }
+
+                        }
+                    
+                    ?>
+
+
+
                 </div>
                 <div class="col-8">
                    <img src="img/deportistas.jpg" alt="deportistas" class="img-fluid w-100"> 
