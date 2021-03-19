@@ -85,7 +85,7 @@
 
                     <?php 
                     
-                        if(isset($_POST["botonCalcular"])){
+                        /*if(isset($_POST["botonCalcular"])){
 
                            //Entradas 
                            $peso=$_POST["peso"];
@@ -93,23 +93,41 @@
 
                            //Proceso
                            $imc=$peso/($altura*$altura);
-                           echo("su IMC es de: ".$imc);
+                           $mensaje;
+
 
                            if($imc<18.5){
-                               echo("Su peso es insuficiente");
+                              $mensaje="Su peso es insuficiente";
                            }else if($imc>=18.5 && $imc<24.9){
-                               echo("su peso es normal");
+                              $mensaje="su peso es normal";
                            }else if($imc>=24.9 && $imc<26.9){
-                               echo("obesidad 1");
+                              $mensaje="sobrepeso 1";
                            }else if($imc>=26.9 && $imc<29.9){
-                                echo("obesidad 1");
-                           }else if(){
-                               
+                              $mensaje="sobrepeso 2";
+                           }else if($imc>=29.9 && $imc<34.9){
+                              $mensaje=("obesidad 1");
+                           }else if($imc>=34.9 && $imc<39.9){
+                              $mensaje=("obesidad 2");
+                           }else if($imc<=39.9 && $imc<=49.9){
+                              $mensaje="obesidad 3";
+                           }else{
+                              $mensaje="obesidad 4";
                            }
 
-                        }
+                           //salidas
+                           echo("su IMC es de: ".round($imc,2));
+                           echo($mensaje);
+
+
+                        }*/
                     
                     ?>
+
+                    <?php   if(isset($_POST["botonCalcular"])): ?>
+                      <h1>hizo click</h1>
+                    <?php endif?>
+
+                   
 
 
 
